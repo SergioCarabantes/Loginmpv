@@ -16,26 +16,15 @@
  *
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.scarabantes.loginmvp.presenters;
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
+import com.scarabantes.loginmvp.ui.views.LoginView;
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+/**
+ * Created by scarabantes on 12/10/15.
+ */
+public interface LoginPresenter {
+    void create();
+    void setView(LoginView view);
+    void validateLogin(String userName, String password);
 }

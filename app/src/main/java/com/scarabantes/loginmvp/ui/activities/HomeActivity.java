@@ -16,30 +16,31 @@
  *
  */
 
-apply plugin: 'com.android.application'
+package com.scarabantes.loginmvp.ui.activities;
 
-android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.0"
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 
-    defaultConfig {
-        applicationId "com.scarabantes.loginmvp"
-        minSdkVersion 14
-        targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+import com.scarabantes.loginmvp.R;
+
+/**
+ * Created by scarabantes on 18/10/15.
+ */
+public class HomeActivity extends AppCompatActivity {
+
+    private Toolbar toolbar;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_home);
+
+        initViews();
+        setSupportActionBar(toolbar);
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-}
 
-dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.android.support:design:23.0.1'
+    private void initViews() {
+        toolbar = (Toolbar) findViewById(R.id.toolbar);
+    }
 }

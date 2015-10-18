@@ -16,26 +16,13 @@
  *
  */
 
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+package com.scarabantes.loginmvp.interactors;
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.android.tools.build:gradle:1.3.0'
+import com.scarabantes.loginmvp.callbacks.CallBackResponse;
 
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-    }
-}
-
-allprojects {
-    repositories {
-        jcenter()
-    }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
+/**
+ * Created by scarabantes on 18/10/15.
+ */
+public interface LoginInteractor {
+    void login(String userName, String password, final CallBackResponse callBack);
 }

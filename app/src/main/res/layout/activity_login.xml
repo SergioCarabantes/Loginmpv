@@ -1,41 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ /*
+  ~  * Copyright (C) 2015 Sergio Carabantes
+  ~  *
+  ~  * Licensed under the Apache License, Version 2.0 (the "License");
+  ~  * you may not use this file except in compliance with the License.
+  ~  * You may obtain a copy of the License at
+  ~  *
+  ~  *       http://www.apache.org/licenses/LICENSE-2.0
+  ~  *
+  ~  * Unless required by applicable law or agreed to in writing, software
+  ~  * distributed under the License is distributed on an "AS IS" BASIS,
+  ~  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~  * See the License for the specific language governing permissions and
+  ~  * limitations under the License.
+  ~  */
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/root_rl"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">kjlk
+    android:layout_height="match_parent"
+    >
 
     <include
-        layout="@layout/toolbar_main"/>
+        layout="@layout/toolbar_main"
+        />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_below="@+id/toolbar"
-        android:layout_margin="@dimen/spacing_huge">
+        android:layout_margin="@dimen/spacing_xlarge"
+        >
 
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/spacing_small"
             android:inputType="textEmailAddress"
             android:textColor="@color/grey"
             android:drawableLeft="@drawable/ic_person_black_24dp"
-            android:drawablePadding="@dimen/spacing_small"
-            android:hint="Username"/>
+            android:drawablePadding="@dimen/spacing_medium"
+            android:hint="Username"
+            />
 
 
         <EditText
             android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="@dimen/spacing_small"
             android:inputType="textPassword"
             android:textColor="@color/grey"
             android:drawableLeft="@drawable/ic_key_black_24dp"
-            android:drawablePadding="@dimen/spacing_small"
-            android:hint="Password"/>
+            android:drawablePadding="@dimen/spacing_medium"
+            android:hint="Password"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:layout_gravity="center"
+            android:visibility="invisible"
+            />
 
 
         <Button
@@ -43,13 +75,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_large"
-            android:layout_marginLeft="@dimen/spacing_huge"
-            android:layout_marginRight="@dimen/spacing_huge"
+            android:layout_marginLeft="@dimen/spacing_xlarge"
+            android:layout_marginRight="@dimen/spacing_xlarge"
             android:gravity="center"
             android:textColor="@android:color/white"
             android:background="@color/colorPrimary"
-            android:text="@string/button_login"/>
+            android:text="@string/button_login"
+            />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textSize="10sp"
+        android:layout_margin="@dimen/spacing_large"
+        android:text="@string/valid_test_user"
+        />
 
 </RelativeLayout>
